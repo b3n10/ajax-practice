@@ -1,0 +1,12 @@
+table {
+	border: 1px solid #111;
+}
+table tr:nth-child(even) {
+	background-color: #d6ef4a;
+}
+table tr:nth-child(odd) {
+	background-color: #f4b46b;
+}
+table td {
+	padding: 10px 20px;
+}
