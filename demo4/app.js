@@ -1,19 +1,24 @@
-const btnMultiply = document.querySelector("#btn-multiply"),
-	txtNumber = document.querySelector("#txt-number"),
-	response = document.querySelector("#ajax_response");
+const formGreet = document.querySelector("#frm-greet");
+const txtUser = document.querySelector("#txt-user");
+const response = document.querySelector("#ajax_response");
 
-btnMultiply.addEventListener("click", () => {
+formGreet.addEventListener("submit", (e) => {
+	e.preventDefault();
+
 	const xhr = new XMLHttpRequest();
 
-	xhr.open("GET", `multiplication.php?num=${(txtNumber.value === "") ? "" : txtNumber.value}`, true);
+	xhr.open("POST", "greet_user.php", true);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 	xhr.onload = () => {
 		if (xhr.status === 200) {
-			response.innerHTML = xhr.responseText;
+			response.innerHTML += `${xhr.responseText}<br>`;
 		}
 	};
 
-	xhr.send();
-	// console.log(`${txtNumber.value}`);
-});
+	xhr.send(`name=${txtUser.value}`);
 
+	// clear textbox
+	txtUser.value = "";
+	txtUser.focus();
+});

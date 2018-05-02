@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>AJAX demo 3 - Multiplication Table</title>
+	<title>AJAX demo 4 - POST Method</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="get-php">
-		<h2>Multiplication Table</h2>
-		<input type="text" id="txt-number" placeholder="Type a number">
-		<br>
-		<button id="btn-multiply">Show Table</button>
+		<h2>POST Demo</h2>
+		<form id="frm-greet">
+			<input type="text" id="txt-user" placeholder="Type a name">
+			<br>
+			<button id="btn-greet" type="submit">Submit</button>
+		</form>
 		<div id="ajax_response"></div>
 	</div>
 	<script src="app.js"></script>
