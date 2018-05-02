@@ -1,0 +1,9 @@
+body {
+	background-color: #f3f3f3;
+}
+#ajax_response {
+	padding: 10px;
+	background-color: #fff;
+	font-size: 1em;
+	font-weight: 900;
+}
