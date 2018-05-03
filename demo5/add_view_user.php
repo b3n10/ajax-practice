@@ -2,7 +2,7 @@
 
 if (isset($_POST["name"])) { 
 
-	if ($_POST["name"] != "") {
+	if (trim($_POST["name"]) != "") {
 		
 		$conn = mysqli_connect("localhost", "root", "jairah", "ajax_demo");
 		$name = htmlspecialchars($_POST["name"]);
@@ -10,7 +10,7 @@ if (isset($_POST["name"])) {
 
 		if (mysqli_query($conn, $sql)) {
 
-			$sql = "SELECT * FROM users";
+			$sql = "SELECT * FROM users ORDER BY id DESC";
 			$result = mysqli_query($conn, $sql);
 			$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
