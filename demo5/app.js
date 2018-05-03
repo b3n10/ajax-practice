@@ -17,16 +17,16 @@ formGreet.addEventListener("submit", (e) => {
 
 			users.forEach(user => {
 				output += `
-					<ul>
-						<li>ID: ${user.id}</li>
-						<li>Name: ${user.name}</li>
-					</ul>
+					<tr>
+						<td>ID: ${user.id}</td>
+						<td>Name: ${user.name}</td>
+					</tr>
 				`;
 			});
 
-			response.innerHTML = output;
+			response.innerHTML = `<table>${output}</table>`;
 		} else if (xhr.status === 200) {
-			response.innerHTML = xhr.responseText;
+			response.innerHTML = `<h1>${xhr.responseText}</h1>`;
 		}
 	};
 
